@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JC Blowers | High-Speed Turbo Blowers & Air Knife Systems Manufacturer</title>
     <meta name="description" content="Professional B2B manufacturer of high-speed turbo blowers, maglev blowers, and custom air knife systems for industrial aeration and drying lines.">
-    <!-- 🌟【完美补齐核心引擎】：引入国内直连、海外买家访问皆可秒开的顶级排版库与渲染引擎 -->
+    <!-- 引入高兼容度高速样式库与动态渲染引擎 -->
     <script src="https://bytecdntp.com"></script>
     <script src="https://bytecdntp.com"></script>
     <link href="https://googleapis.com" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <!-- 🌟【科技蓝离线重构】：将所有大厂深蓝、激光极光蓝样式锁死在本地，彻底免疫网络加载问题 -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b1329 !important; color: #f8fafc !important; }
+        header { background-color: rgba(11, 19, 41, 0.9) !important; border-color: #1c2541 !important; border-bottom-width: 1px !important; backdrop-filter: blur(12px) !important; }
+        .text-blue-500 { color: #00b4d8 !important; }
+        .bg-slate-900 { background-color: #0b1329 !important; }
+        .bg-gray-900\/90 { background-color: rgba(11, 19, 41, 0.9) !important; }
+        .bg-gray-800\/80 { background-color: rgba(28, 37, 65, 0.8) !important; }
+        .border-gray-800 { border-color: #1c2541 !important; }
+        .border-gray-700 { border-color: #3a506b !important; }
+        .bg-emerald-600 { background-color: #059669 !important; }
+        .bg-blue-600 { background-color: #0077b6 !important; }
+        .bg-gray-800 { background-color: #1c2541 !important; }
+        .bg-gray-900 { background-color: #0b1329 !important; }
+        .admin-panel-box { background-color: #1c2541 !important; border-top: 4px solid #00b4d8 !important; padding: 2.5rem 1.5rem !important; border-radius: 1rem !important; margin-top: 3rem !important; }
+        .input-dark { background-color: #0b1329 !important; border: 1px solid #3a506b !important; color: #ffffff !important; border-radius: 0.5rem !important; padding: 0.5rem 1.0rem !important; font-size: 0.875rem !important; width: 100% !important; }
+    </style>
 </head>
-<body class="bg-slate-900 text-gray-100 scroll-smooth">
+<body class="scroll-smooth">
 
     <div id="app">
         <!-- 1. 导航栏 (NAV BAR) -->
-        <header class="sticky top-0 z-50 bg-gray-900/90 border-b border-gray-800 backdrop-blur-md">
+        <header class="sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <div class="text-2xl font-bold tracking-tight text-white">
                     JC <span class="text-blue-500">BLOWERS</span>
@@ -26,11 +42,10 @@
                     <a href="#contact" class="hover:text-blue-500 transition">Contact Us</a>
                 </nav>
                 <div class="flex items-center space-x-4">
-                    <!-- 🛠️ 缝合安全上新控制台：点击后原地在网页最下方展开后台，免注册、不跳404 -->
+                    <!-- 🛠️ 纯独立级管理按钮（直接切换底层的变量，100%原地弹出来！） -->
                     <button @click="showAdmin = !showAdmin" class="text-xs bg-gray-800 text-gray-400 px-3 py-1.5 rounded border border-gray-700 hover:text-white transition">
                         🛠️ 静态数据面板
                     </button>
-                    <!-- 缝合完美绑定的海外商机直连 WhatsApp 号 -->
                     <a href="https://wa.me" target="_blank" class="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition flex items-center space-x-2 shadow-lg shadow-emerald-900/20">
                         <span>WhatsApp Me</span>
                     </a>
@@ -51,7 +66,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-tr from-blue-600 to-indigo-900 rounded-2xl flex items-center justify-center shadow-2xl border border-gray-700">
+                    <div class="w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-tr from-blue-600 to-indigo-950 rounded-2xl flex items-center justify-center shadow-2xl border border-gray-700">
                         <div class="text-center p-6">
                             <span class="block text-4xl mb-2">⚙️</span>
                             <p class="font-semibold text-lg text-white">JC Turbo Blower</p>
@@ -109,22 +124,3 @@
                             <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">{{ product.description }}</p>
                         </div>
                         <div class="flex space-x-2">
-                            <a href="#contact" class="flex-1 text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact For Specs</a>
-                            <!-- 内部删除功能按钮 -->
-                            <button v-if="showAdmin" @click="removeProduct(index)" class="bg-red-900/40 border border-red-700 text-red-400 text-xs px-2.5 rounded-lg hover:bg-red-700 hover:text-white transition">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. 零注册内嵌式可视化管理面板 -->
-        <section v-if="showAdmin" class="bg-gray-800 border-t-2 border-blue-500 py-10 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="flex items-center justify-between border-b border-gray-700 pb-3">
-                    <h3 class="text-lg font-bold text-blue-400 flex items-center">⚙️ JC Blowers 可视化产品上新面板 (本地持久化模式)</h3>
-                    <button @click="showAdmin = false" class="text-gray-400 hover:text-white text-sm">✕ Close</button>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>

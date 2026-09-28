@@ -14,7 +14,7 @@
 <body class="bg-slate-900 text-gray-100 scroll-smooth">
 
     <div id="app">
-        <!-- 1. 导航栏 -->
+        <!-- 1. 导航栏 (NAV BAR) -->
         <header class="sticky top-0 z-50 bg-gray-900/90 border-b border-gray-800 backdrop-blur-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <div class="text-2xl font-bold tracking-tight text-white">
@@ -57,7 +57,7 @@
             </div>
         </section>
 
-        <!-- 3. 工厂优势 -->
+        <!-- 3. 工厂优势 (WHY US) -->
         <section id="about" class="py-16 bg-gray-900 border-t border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -84,7 +84,7 @@
             </div>
         </section>
 
-        <!-- 4. CMS 驱动的可视化商品展示矩阵 -->
+        <!-- 4. CMS 驱动的可视化商品展示矩阵 (PRODUCT SHOWCASE) -->
         <section id="products" class="py-20 bg-gray-800/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -98,12 +98,19 @@
                     <p class="text-gray-400 text-xs">Syncing real-time products from your cloud CMS panel...</p>
                 </div>
 
+                <!-- 无产品时的安全备用状态提示 -->
+                <div v-else-if="products.length === 0" class="text-center py-12 bg-gray-800/50 rounded-2xl border border-gray-700 max-w-xl mx-auto">
+                    <p class="text-gray-300 font-semibold mb-2">Your Cloud Content Panel is Synced! 🚀</p>
+                    <p class="text-gray-400 text-xs px-6">Now, simply log into your Sanity Studio Dashboard and publish your first product item. It will immediately show up here dynamically!</p>
+                </div>
+
                 <!-- 核心：当你在云端 CMS 点击发布后，这里会自动拉取并刷新列表 -->
                 <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div v-for="(product, index) in products" :key="index" class="bg-gray-800/80 rounded-xl border border-gray-700 overflow-hidden flex flex-col justify-between p-6 shadow-xl">
                         <div>
                             <div class="h-40 bg-gray-900 rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                                <img :src="product.imageUrl" :alt="product.name" class="w-full h-full object-cover">
+                                <img v-if="product.imageUrl" :src="product.imageUrl" :alt="product.name" class="w-full h-full object-cover">
+                                <span v-else class="text-3xl">📦</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-1">{{ product.name }}</h3>
                             <p class="text-xs text-blue-400 font-medium mb-3">{{ product.series }}</p>
@@ -115,7 +122,7 @@
             </div>
         </section>
 
-        <!-- 5. 商务拓展板块 -->
+        <!-- 5. 商务拓展板块 (CONTACT SECTION) -->
         <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
                 <div class="space-y-3">
@@ -123,11 +130,3 @@
                     <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">Click below to email your technical requirements or chat with us instantly on WhatsApp.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="mailto:info@://jcblowers.com Inquiry from Website" class="flex flex-col items-center justify-center p-6 bg-blue-600/10 border border-blue-500/30 rounded-2xl hover:bg-blue-600/20 transition group">
-                        <span class="text-4xl mb-3 group-hover:scale-110 transition duration-300">✉️</span>
-                        <span class="text-sm font-semibold text-blue-400">Email Our Team</span>
-                        <span class="text-xs text-gray-400 mt-1">info@jcblowers.com</span>
-                    </a>
-
-                    </a>

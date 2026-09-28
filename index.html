@@ -100,8 +100,8 @@
 
                 <!-- 无产品时的安全备用状态提示 -->
                 <div v-else-if="products.length === 0" class="text-center py-12 bg-gray-800/50 rounded-2xl border border-gray-700 max-w-xl mx-auto">
-                    <p class="text-gray-300 font-semibold mb-2">Your Cloud Content Panel is Synced! 🚀</p>
-                    <p class="text-gray-400 text-xs px-6">Now, simply log into your Sanity Studio Dashboard and publish your first product item. It will immediately show up here dynamically!</p>
+                    <p class="text-gray-300 font-semibold mb-2">DatoCMS Content Panel Connected! 🚀</p>
+                    <p class="text-gray-400 text-xs px-6">Your frontend is 100% ready. Now simply add products in your DatoCMS dashboard, and they will stream here live instantly!</p>
                 </div>
 
                 <!-- 核心：当你在云端 CMS 点击发布后，这里会自动拉取并刷新列表 -->
@@ -109,7 +109,7 @@
                     <div v-for="(product, index) in products" :key="index" class="bg-gray-800/80 rounded-xl border border-gray-700 overflow-hidden flex flex-col justify-between p-6 shadow-xl">
                         <div>
                             <div class="h-40 bg-gray-900 rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                                <img v-if="product.imageUrl" :src="product.imageUrl" :alt="product.name" class="w-full h-full object-cover">
+                                <img v-if="product.image" :src="product.image.url" :alt="product.name" class="w-full h-full object-cover">
                                 <span v-else class="text-3xl">📦</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-1">{{ product.name }}</h3>

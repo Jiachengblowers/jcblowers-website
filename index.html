@@ -30,7 +30,6 @@
                     <button @click="showAdmin = !showAdmin" class="text-xs bg-gray-800 text-gray-400 px-2.5 py-1 rounded border border-gray-700 hover:text-white transition">
                         🛠️ Panel
                     </button>
-                    <!-- 填入完全正确的 WhatsApp 全球直连跳转商机号 -->
                     <a href="https://wa.me" target="_blank" class="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition flex items-center space-x-2 shadow-lg shadow-emerald-900/20">
                         <span>WhatsApp Me</span>
                     </a>
@@ -110,7 +109,6 @@
                         </div>
                         <div class="flex space-x-2">
                             <a href="#contact" class="flex-1 text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact For Specs</a>
-                            <!-- 内部管理员专用的原地删除按钮 -->
                             <button v-if="showAdmin" @click="removeProduct(index)" class="bg-red-900/40 border border-red-700 text-red-400 text-xs px-2.5 rounded-lg hover:bg-red-700 hover:text-white transition">Delete</button>
                         </div>
                     </div>
@@ -128,3 +126,4 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Product Name (产品名称)</label>

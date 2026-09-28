@@ -25,7 +25,11 @@
                     <a href="#products" class="hover:text-blue-500 transition">Products</a>
                     <a href="#contact" class="hover:text-blue-500 transition">Contact Us</a>
                 </nav>
-                <div class="flex items-center">
+                <div class="flex items-center space-x-4">
+                    <!-- 仅供内部人员快捷展开管理后台的隐形暗号 -->
+                    <button @click="showAdmin = !showAdmin" class="text-xs bg-gray-800 text-gray-400 px-2.5 py-1 rounded hover:text-white transition">
+                        🛠️ Panel
+                    </button>
                     <a href="https://wa.me" target="_blank" class="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition flex items-center space-x-2 shadow-lg shadow-emerald-900/20">
                         <span>WhatsApp Me</span>
                     </a>
@@ -57,7 +61,7 @@
             </div>
         </section>
 
-        <!-- 3. 工厂优势 (WHY US) -->
+        <!-- 3. 工厂优势 -->
         <section id="about" class="py-16 bg-gray-900 border-t border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -84,7 +88,7 @@
             </div>
         </section>
 
-        <!-- 4. CMS 驱动的可视化商品展示矩阵 (PRODUCT SHOWCASE) -->
+        <!-- 4. 智能商品展示矩阵 (PRODUCT SHOWCASE) -->
         <section id="products" class="py-20 bg-gray-800/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -92,41 +96,35 @@
                     <p class="text-gray-400 text-sm sm:text-base">Engineered for aeration, high-speed air delivery, automated surface drying, and vacuum systems.</p>
                 </div>
                 
-                <!-- 加载状态动画 -->
-                <div v-if="loading" class="text-center py-12">
-                    <div class="animate-spin inline-block w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mb-2"></div>
-                    <p class="text-gray-400 text-xs">Syncing real-time products from your cloud CMS panel...</p>
-                </div>
-
-                <!-- 无产品时的安全备用状态提示 -->
-                <div v-else-if="products.length === 0" class="text-center py-12 bg-gray-800/50 rounded-2xl border border-gray-700 max-w-xl mx-auto">
-                    <p class="text-gray-300 font-semibold mb-2">DatoCMS Content Panel Connected! 🚀</p>
-                    <p class="text-gray-400 text-xs px-6">Your frontend is 100% ready. Now simply add products in your DatoCMS dashboard, and they will stream here live instantly!</p>
-                </div>
-
-                <!-- 核心：当你在云端 CMS 点击发布后，这里会自动拉取并刷新列表 -->
-                <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div v-for="(product, index) in products" :key="index" class="bg-gray-800/80 rounded-xl border border-gray-700 overflow-hidden flex flex-col justify-between p-6 shadow-xl">
                         <div>
                             <div class="h-40 bg-gray-900 rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                                <img v-if="product.image" :src="product.image.url" :alt="product.name" class="w-full h-full object-cover">
-                                <span v-else class="text-3xl">📦</span>
+                                <img v-if="product.image && product.image.includes('http')" :src="product.image" :alt="product.name" class="w-full h-full object-cover">
+                                <span v-else class="text-4xl">{{ product.image || '📦' }}</span>
                             </div>
                             <h3 class="text-lg font-semibold text-white mb-1">{{ product.name }}</h3>
                             <p class="text-xs text-blue-400 font-medium mb-3">{{ product.series }}</p>
                             <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">{{ product.description }}</p>
                         </div>
-                        <a href="#contact" class="text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact For Specs</a>
+                        <div class="flex space-x-2">
+                            <a href="#contact" class="flex-1 text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact</a>
+                            <!-- 内部管理员删除按钮 -->
+                            <button v-if="showAdmin" @click="removeProduct(index)" class="bg-red-900/40 border border-red-700 text-red-400 text-xs px-2.5 rounded-lg hover:bg-red-700 hover:text-white transition">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. 商务拓展板块 (CONTACT SECTION) -->
-        <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-                <div class="space-y-3">
-                    <h2 class="text-3xl font-bold text-white tracking-tight">Connect with Us Directly</h2>
-                    <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">Click below to email your technical requirements or chat with us instantly on WhatsApp.</p>
+        <!-- 🌟【重点】：直接在公司网站前台内嵌的 0 注册可视化内容管理器 -->
+        <section v-if="showAdmin" class="bg-gray-800 border-t-2 border-blue-500 py-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="flex items-center justify-between border-b border-gray-700 pb-3">
+                    <h3 class="text-lg font-bold text-blue-400 flex items-center">⚙️ JC Blowers 可视化产品上新面板 (免注册云后台)</h3>
+                    <button @click="showAdmin = false" class="text-gray-400 hover:text-white text-sm">✕ Close</button>
                 </div>
                 
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Product Name (产品名称)</label>

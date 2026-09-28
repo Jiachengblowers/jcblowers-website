@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JC Blowers | High-Speed Turbo Blowers & Air Knife Systems Manufacturer</title>
     <meta name="description" content="Professional B2B manufacturer of high-speed turbo blowers, maglev blowers, and custom air knife systems for industrial aeration and drying lines.">
-    <!-- 引入国内高度兼容的高速样式库与动态渲染引擎，国内海外皆可秒开 -->
+    <!-- 🌟【完美补齐核心引擎】：引入国内直连、海外买家访问皆可秒开的顶级排版库与渲染引擎 -->
     <script src="https://bytecdntp.com"></script>
     <script src="https://bytecdntp.com"></script>
     <link href="https://googleapis.com" rel="stylesheet">
@@ -25,11 +25,12 @@
                     <a href="#products" class="hover:text-blue-500 transition">Products</a>
                     <a href="#contact" class="hover:text-blue-500 transition">Contact Us</a>
                 </nav>
-                <div class="flex items-center space-x-3">
-                    <!-- 内部人员快捷登录可视化后台的极简入口 -->
-                    <a href="/admin.html" target="_blank" class="text-xs bg-gray-800 text-gray-400 px-3 py-1.5 rounded border border-gray-700 hover:text-white transition">
-                        🛠️ 后台管理
-                    </a>
+                <div class="flex items-center space-x-4">
+                    <!-- 🛠️ 缝合安全上新控制台：点击后原地在网页最下方展开后台，免注册、不跳404 -->
+                    <button @click="showAdmin = !showAdmin" class="text-xs bg-gray-800 text-gray-400 px-3 py-1.5 rounded border border-gray-700 hover:text-white transition">
+                        🛠️ 静态数据面板
+                    </button>
+                    <!-- 缝合完美绑定的海外商机直连 WhatsApp 号 -->
                     <a href="https://wa.me" target="_blank" class="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition flex items-center space-x-2 shadow-lg shadow-emerald-900/20">
                         <span>WhatsApp Me</span>
                     </a>
@@ -61,7 +62,7 @@
             </div>
         </section>
 
-        <!-- 3. 工厂优势 (WHY US) -->
+        <!-- 3. 工厂优势 -->
         <section id="about" class="py-16 bg-gray-900 border-t border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -107,22 +108,23 @@
                             <p class="text-xs text-blue-400 font-medium mb-3">{{ product.series }}</p>
                             <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">{{ product.description }}</p>
                         </div>
-                        <a href="#contact" class="text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact For Specs</a>
+                        <div class="flex space-x-2">
+                            <a href="#contact" class="flex-1 text-center text-xs font-semibold bg-gray-700 text-white py-2.5 rounded-lg hover:bg-blue-600 transition">Contact For Specs</a>
+                            <!-- 内部删除功能按钮 -->
+                            <button v-if="showAdmin" @click="removeProduct(index)" class="bg-red-900/40 border border-red-700 text-red-400 text-xs px-2.5 rounded-lg hover:bg-red-700 hover:text-white transition">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. 商务拓展联系板块 -->
-        <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-                <div class="space-y-3">
-                    <h2 class="text-3xl font-bold text-white tracking-tight">Connect with Us Directly</h2>
-                    <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">Click below to email your technical requirements or chat with us instantly on WhatsApp.</p>
+        <!-- 5. 零注册内嵌式可视化管理面板 -->
+        <section v-if="showAdmin" class="bg-gray-800 border-t-2 border-blue-500 py-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="flex items-center justify-between border-b border-gray-700 pb-3">
+                    <h3 class="text-lg font-bold text-blue-400 flex items-center">⚙️ JC Blowers 可视化产品上新面板 (本地持久化模式)</h3>
+                    <button @click="showAdmin = false" class="text-gray-400 hover:text-white text-sm">✕ Close</button>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="mailto:info@://jcblowers.com Inquiry from Website" class="flex flex-col items-center justify-center p-6 bg-blue-600/10 border border-blue-500/30 rounded-2xl hover:bg-blue-600/20 transition group">
-                        <span class="text-4xl mb-3 group-hover:scale-110 transition duration-300">✉️</span>
-                        <span class="text-sm font-semibold text-blue-400">Email Our Team</span>
-                        <span class="text-xs text-gray-400 mt-1">info@jcblowers.com</span>
+                    <div>

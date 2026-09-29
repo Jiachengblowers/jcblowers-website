@@ -7,15 +7,15 @@
     <meta name="description" content="Professional B2B manufacturer of high-speed turbo blowers, maglev blowers, and custom air knife systems for industrial aeration and drying lines.">
     <link href="https://googleapis.com" rel="stylesheet">
     
-    <!-- 🌟【科技浅蓝内嵌独立排版】：100%不依赖外部加载，将高端微光银蓝、极光蓝盒模型与五大英文技术亮点全部手写锁死在本地 -->
+    <!-- 科技浅蓝内嵌独立排版：100%不需要外部加载，将高端微光银蓝、极光蓝盒模型与五大技术亮点完全锁死在本地 -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #1e293b; line-height: 1.6; }
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
         
         /* 导航栏 */
-        header { position: sticky; top: 0; z-index: 50; background-color: rgba(240, 244, 248, 0.9); border-bottom: 1px solid #d1dbe5; backdrop-filter: blur(12px); }
-        .nav-container { max-w: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 80px; display: flex; items-center: center; justify-content: space-between; align-items: center; }
+        header { position: sticky; top: 0; z-index: 50; background-color: rgba(240, 244, 248, 0.95); border-bottom: 1px solid #d1dbe5; backdrop-filter: blur(12px); }
+        .nav-container { max-w: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 1.5rem; font-weight: 700; tracking-spacing: -0.05em; color: #0f172a; }
         .logo span { color: #0284c7; }
         .nav-links { display: flex; gap: 2.5rem; }
@@ -32,7 +32,7 @@
         .btn-border:hover { border-color: #475569; background-color: #f8fafc; }
 
         /* 巨幕 Hero Area */
-        .hero-bg-wrapper { background: linear-gradient(180deg, #e0e9f0 0%, #f0f4f8 100%); border-bottom: 1px solid #d1dbe5; }
+        .hero-bg-wrapper { background: linear-gradient(180deg, #e0e9f0 0%, #f0f4f8 100%); border-bottom: 1px solid #d1dbe5; width: 100%; }
         .hero-section { max-w: 1200px; margin: 0 auto; padding: 6rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         @media (max-w: 1024px) { .hero-section { grid-template-columns: 1fr; text-align: center; } }
         .hero-badge { background-color: #ffffff; color: #0284c7; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; border: 1px solid #cbd5e1; display: inline-block; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
@@ -45,7 +45,7 @@
         .hero-box { width: 340px; height: 340px; background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%); border-radius: 1.75rem; border: 1px solid #cbd5e1; box-shadow: 0 20px 40px -10px rgba(15,23,42,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
 
         /* 工厂优势 Advantages */
-        .section-bg { background-color: #ffffff; padding: 5rem 1.5rem; }
+        .section-bg { background-color: #ffffff; padding: 5rem 1.5rem; width: 100%; border-bottom: 1px solid #e2e8f0; }
         .section-title-box { text-align: center; max-w: 750px; margin: 0 auto 4.5rem auto; }
         .section-title { font-size: 2.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; }
         .section-subtitle { color: #64748b; font-size: 1rem; }
@@ -56,10 +56,20 @@
         .card-h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.85rem; color: #0f172a; }
         .card-p { color: #475569; font-size: 0.9rem; line-height: 1.6; }
 
-        /* 产品线橱窗 Grid */
-        .products-bg { background-color: #f1f5f9; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 5rem 1.5rem; }
+        /* 五大技术亮点专属排版 */
+        .features-section-wrapper { background-color: #ffffff; width: 100%; border-bottom: 1px solid #e2e8f0; padding: 6rem 1.5rem; }
+        .features-section { max-w: 1200px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3.5rem; }
+        @media (max-w: 1024px) { .features-grid { grid-template-columns: 1fr; } }
+        .feature-item-box { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.01); display: flex; gap: 1.25rem; }
+        .feature-num-icon { flex-shrink: 0; width: 44px; height: 44px; background-color: rgba(2, 132, 199, 0.1); color: #0284c7; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.125rem; }
+        .feature-content h3 { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }
+        .feature-content p { color: #475569; font-size: 0.875rem; line-height: 1.6; text-align: justify; }
+
+        /* 产品线橱窗 Grid - 四列并排 */
+        .products-bg { background-color: #f1f5f9; padding: 5rem 1.5rem; width: 100%; border-bottom: 1px solid #cbd5e1; }
         .products-section { max-w: 1200px; margin: 0 auto; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
         @media (max-w: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
         @media (max-w: 640px) { .grid-4 { grid-template-columns: 1fr; } }
         .product-card { background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 1rem; overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 25px -5px rgba(15,23,42,0.04); }
@@ -68,20 +78,11 @@
         .prod-title { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; }
         .prod-series { font-size: 0.75rem; font-weight: 700; color: #0284c7; margin-bottom: 0.85rem; text-transform: uppercase; tracking-spacing: 0.05em; }
         .prod-desc { color: #475569; font-size: 0.875rem; line-height: 1.5; margin-bottom: 1.5rem; }
-        .btn-card { display: block; width: 100%; text-align: center; background-color: #f1f5f9; color: #0f172a; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; border: 1px solid #cbd5e1; }
+        .btn-card { display: block; width: 100%; text-align: center; background-color: #f1f5f9; color: #0f172a; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; border: 1px solid #cbd5e1; text-align: center; }
         .btn-card:hover { background-color: #0284c7; color: white; border-color: #0284c7; }
 
-        /* 🌟【重磅：五大技术亮点专属排版】 */
-        .features-section { max-w: 1200px; margin: 0 auto; padding: 6rem 1.5rem; }
-        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3.5rem; }
-        @media (max-w: 1024px) { .features-grid { grid-template-columns: 1fr; } }
-        .feature-item-box { background-color: #ffffff; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.01); display: flex; gap: 1.25rem; }
-        .feature-num-icon { flex-shrink: 0; width: 44px; height: 44px; background-color: rgba(2, 132, 199, 0.1); color: #0284c7; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.125rem; }
-        .feature-content h3 { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }
-        .feature-content p { color: #475569; font-size: 0.875rem; line-height: 1.6; text-align: justify; }
-
         /* 联系我们 Section */
-        .contact-bg { background-color: #ffffff; border-top: 1px solid #e2e8f0; padding: 5rem 1.5rem; }
+        .contact-bg { background-color: #ffffff; padding: 5rem 1.5rem; width: 100%; }
         .contact-section { max-w: 850px; margin: 0 auto; text-align: center; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; }
         @media (max-w: 640px) { .contact-grid { grid-template-columns: 1fr; } }
@@ -96,18 +97,14 @@
         .c-value { font-size: 0.875rem; color: #475569; font-weight: 500; }
         
         .info-badge-grid { max-w: 520px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left; font-size: 0.8rem; color: #475569; border-top: 1px solid #cbd5e1; padding-top: 2rem; }
-        footer { text-align: center; padding: 2.5rem; border-top: 1px solid #cbd5e1; background-color: #f8fafc; font-size: 0.8rem; color: #64748b; font-weight: 500; }
+        footer { text-align: center; padding: 2.5rem; border-top: 1px solid #cbd5e1; background-color: #f8fafc; font-size: 0.8rem; color: #64748b; font-weight: 500; width: 100%; }
     </style>
 </head>
 <body>
 
-    <!-- 1. 导航栏 (NAV BAR) -->
+    <!-- 1. 导航栏 -->
     <header>
         <div class="nav-container">
             <div class="logo">JC <span>BLOWERS</span></div>
             <nav class="nav-links">
                 <a href="#about">About Us</a>
-                <a href="#features">Technology</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact Us</a>
-            </nav>

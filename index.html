@@ -5,121 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JC Blowers | High-Speed Turbo Blowers & Air Knife Systems Manufacturer</title>
     <meta name="description" content="Professional B2B manufacturer of high-speed turbo blowers, maglev blowers, and custom air knife systems for industrial aeration and drying lines.">
-    <!-- 引入国内直连加速的高速排版组件与动态数据切换引擎 -->
-    <script src="https://bytecdntp.com"></script>
-    <script src="https://bytecdntp.com"></script>
     <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- 🌟【科技浅蓝内嵌独立排版】：100%不依赖外部加载，将高端微光银蓝、极光蓝盒模型与五大英文技术亮点全部手写锁死在本地 -->
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0b1329 !important; color: #f8fafc !important; }
-        header { background-color: rgba(11, 19, 41, 0.95) !important; border-color: #1c2541 !important; border-bottom-width: 1px !important; backdrop-filter: blur(12px) !important; }
-        .text-blue-500 { color: #00b4d8 !important; }
-        .bg-gray-800\/80 { background-color: rgba(28, 37, 65, 0.8) !important; }
-        .border-gray-700 { border-color: #3a506b !important; }
-        .bg-emerald-600 { background-color: #059669 !important; }
-        .bg-blue-600 { background-color: #0077b6 !important; }
-        .bg-gray-900 { background-color: #0b1329 !important; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #1e293b; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        
+        /* 导航栏 */
+        header { position: sticky; top: 0; z-index: 50; background-color: rgba(240, 244, 248, 0.9); border-bottom: 1px solid #d1dbe5; backdrop-filter: blur(12px); }
+        .nav-container { max-w: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 80px; display: flex; items-center: center; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; tracking-spacing: -0.05em; color: #0f172a; }
+        .logo span { color: #0284c7; }
+        .nav-links { display: flex; gap: 2.5rem; }
+        @media (max-w: 768px) { .nav-links { display: none; } }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; color: #475569; }
+        .nav-links a:hover { color: #0284c7; }
+        
+        /* 核心按钮组件 */
+        .btn-whatsapp { background-color: #10b981; color: white; padding: 0.65rem 1.35rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2); }
+        .btn-whatsapp:hover { background-color: #059669; transform: translateY(-1px); }
+        .btn-blue { background-color: #0284c7; color: white; padding: 0.85rem 1.75rem; border-radius: 0.75rem; font-size: 0.9rem; font-weight: 600; display: inline-block; text-center: center; box-shadow: 0 10px 20px -3px rgba(2, 132, 199, 0.3); }
+        .btn-blue:hover { background-color: #0369a1; transform: translateY(-1px); }
+        .btn-border { border: 1px solid #94a3b8; color: #334155; padding: 0.85rem 1.75rem; border-radius: 0.75rem; font-size: 0.9rem; font-weight: 600; display: inline-block; text-center: center; background-color: #ffffff; }
+        .btn-border:hover { border-color: #475569; background-color: #f8fafc; }
+
+        /* 巨幕 Hero Area */
+        .hero-bg-wrapper { background: linear-gradient(180deg, #e0e9f0 0%, #f0f4f8 100%); border-bottom: 1px solid #d1dbe5; }
+        .hero-section { max-w: 1200px; margin: 0 auto; padding: 6rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        @media (max-w: 1024px) { .hero-section { grid-template-columns: 1fr; text-align: center; } }
+        .hero-badge { background-color: #ffffff; color: #0284c7; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; border: 1px solid #cbd5e1; display: inline-block; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .hero-title { font-size: 3rem; font-weight: 700; line-height: 1.15; color: #0f172a; margin-bottom: 1.5rem; tracking-spacing: -0.02em; }
+        .hero-desc { color: #475569; font-size: 1.125rem; margin-bottom: 2.5rem; max-w: 520px; }
+        @media (max-w: 1024px) { .hero-desc { margin: 0 auto 2.5rem auto; } }
+        .hero-buttons { display: flex; gap: 1rem; }
+        @media (max-w: 1024px) { .hero-buttons { justify-content: center; } }
+        .hero-visual { display: flex; justify-content: center; }
+        .hero-box { width: 340px; height: 340px; background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%); border-radius: 1.75rem; border: 1px solid #cbd5e1; box-shadow: 0 20px 40px -10px rgba(15,23,42,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+
+        /* 工厂优势 Advantages */
+        .section-bg { background-color: #ffffff; padding: 5rem 1.5rem; }
+        .section-title-box { text-align: center; max-w: 750px; margin: 0 auto 4.5rem auto; }
+        .section-title { font-size: 2.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; }
+        .section-subtitle { color: #64748b; font-size: 1rem; }
+        .grid-3 { max-w: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        @media (max-w: 768px) { .grid-3 { grid-template-columns: 1fr; } }
+        .card-advantage { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2.5rem 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .card-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+        .card-h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.85rem; color: #0f172a; }
+        .card-p { color: #475569; font-size: 0.9rem; line-height: 1.6; }
+
+        /* 产品线橱窗 Grid */
+        .products-bg { background-color: #f1f5f9; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 5rem 1.5rem; }
+        .products-section { max-w: 1200px; margin: 0 auto; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        @media (max-w: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-w: 640px) { .grid-4 { grid-template-columns: 1fr; } }
+        .product-card { background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 1rem; overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 25px -5px rgba(15,23,42,0.04); }
+        .img-container { height: 170px; background-color: #f8fafc; border-radius: 0.75rem; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; overflow: hidden; }
+        .img-real { width: 100%; height: 100%; object-fit: cover; }
+        .prod-title { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; }
+        .prod-series { font-size: 0.75rem; font-weight: 700; color: #0284c7; margin-bottom: 0.85rem; text-transform: uppercase; tracking-spacing: 0.05em; }
+        .prod-desc { color: #475569; font-size: 0.875rem; line-height: 1.5; margin-bottom: 1.5rem; }
+        .btn-card { display: block; width: 100%; text-align: center; background-color: #f1f5f9; color: #0f172a; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; border: 1px solid #cbd5e1; }
+        .btn-card:hover { background-color: #0284c7; color: white; border-color: #0284c7; }
+
+        /* 🌟【重磅：五大技术亮点专属排版】 */
+        .features-section { max-w: 1200px; margin: 0 auto; padding: 6rem 1.5rem; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3.5rem; }
+        @media (max-w: 1024px) { .features-grid { grid-template-columns: 1fr; } }
+        .feature-item-box { background-color: #ffffff; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.01); display: flex; gap: 1.25rem; }
+        .feature-num-icon { flex-shrink: 0; width: 44px; height: 44px; background-color: rgba(2, 132, 199, 0.1); color: #0284c7; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.125rem; }
+        .feature-content h3 { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }
+        .feature-content p { color: #475569; font-size: 0.875rem; line-height: 1.6; text-align: justify; }
+
+        /* 联系我们 Section */
+        .contact-bg { background-color: #ffffff; border-top: 1px solid #e2e8f0; padding: 5rem 1.5rem; }
+        .contact-section { max-w: 850px; margin: 0 auto; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; }
+        @media (max-w: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+        .contact-box { background-color: rgba(2, 132, 199, 0.03); border: 1px solid rgba(2, 132, 199, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; }
+        .contact-box:hover { background-color: rgba(2, 132, 199, 0.06); border-color: #0284c7; }
+        .contact-box-whatsapp { background-color: rgba(16, 185, 129, 0.03); border: 1px solid rgba(16, 185, 129, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; }
+        .contact-box-whatsapp:hover { background-color: rgba(16, 185, 129, 0.06); border-color: #10b981; }
+        .c-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .c-label { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .c-label-blue { color: #0284c7; }
+        .c-label-green { color: #10b981; }
+        .c-value { font-size: 0.875rem; color: #475569; font-weight: 500; }
+        
+        .info-badge-grid { max-w: 520px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left; font-size: 0.8rem; color: #475569; border-top: 1px solid #cbd5e1; padding-top: 2rem; }
+        footer { text-align: center; padding: 2.5rem; border-top: 1px solid #cbd5e1; background-color: #f8fafc; font-size: 0.8rem; color: #64748b; font-weight: 500; }
     </style>
 </head>
-<body class="scroll-smooth">
+<body>
 
-    <div id="app">
-        <!-- 1. 导航栏 (NAV BAR) -->
-        <header class="sticky top-0 z-50">
-            <div class="nav-container" style="max-w: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: #ffffff;">JC <span class="text-blue-500">BLOWERS</span></div>
-                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                    <a href="#about" class="hover:text-blue-500 transition">About Us</a>
-                    <a href="#products" class="hover:text-blue-500 transition">Products</a>
-                    <a href="#specs" class="hover:text-blue-500 transition">Specifications</a>
-                    <a href="#contact" class="hover:text-blue-500 transition">Contact Us</a>
-                </nav>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <a href="https://wa.me" target="_blank" class="btn-whatsapp">
-                        <span>WhatsApp Me</span>
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- 2. 巨幕展示 (HERO SECTION) -->
-        <section class="py-20 lg:py-28 bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-center lg:text-left">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Direct Factory Sourcing | China</span>
-                    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">Equipment for Moving Air <span class="text-blue-500">with Purpose</span></h1>
-                    <p class="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0">JC Environmental Protection Technology specializes in high-speed turbo blowers, air knives, and air-handling equipment engineered for heavy-duty industrial processing environments.</p>
-                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">Contact Us for Catalog & Price</a>
-                        <a href="#products" class="border border-gray-700 hover:border-gray-500 text-center px-6 py-3 rounded-xl font-semibold transition">Explore Products</a>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-tr from-blue-600 to-indigo-950 rounded-2xl flex items-center justify-center shadow-2xl border border-gray-700">
-                        <div class="text-center p-6">
-                            <span class="block text-4xl mb-2">⚙️</span>
-                            <p class="font-semibold text-lg text-white">JC Turbo Blower</p>
-                            <p class="text-xs text-gray-400 mt-1">Energy-Saving 3D-Impeller Technology</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. 工厂优势 -->
-        <section id="about" class="py-16 bg-gray-900 border-t border-b border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto space-y-3">
-                    <h2 class="text-3xl font-bold text-white tracking-tight">Why Global Buyers Partner with JC Blowers?</h2>
-                    <p class="text-gray-400 text-sm sm:text-base">We combine cutting-edge aeration technology with strict factory testing to provide robust industrial solutions.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-800">
-                        <div class="text-2xl text-blue-500 mb-3">🏭</div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Direct Manufacturer</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Located in Dongguan, Guangdong. We provide transparent wholesale pricing, verifiable factory compliance, and direct engineering support.</p>
-                    </div>
-                    <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-800">
-                        <div class="text-2xl text-blue-500 mb-3">⚡</div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Up to 30%+ Energy Saving</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Our active magnetic levitation and air-bearing configurations eliminate contact wear, significantly slashing your operational electricity bills.</p>
-                    </div>
-                    <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-800">
-                        <div class="text-2xl text-blue-500 mb-3">🔧</div>
-                        <h3 class="text-lg font-semibold text-white mb-2">Tailored Configuration</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Share your specific operating conditions, line width, airflow, or pressure metrics, and our technical team will customize the layout.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. 完美四列横向并排商品展示矩阵 -->
-        <section id="products" class="py-20 bg-gray-800/30">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
-                    <h2 class="text-3xl font-bold text-white tracking-tight">Focused Industrial Product Families</h2>
-                    <p class="section-subtitle">Engineered for aeration, high-speed air delivery, automated surface drying, and vacuum systems.</p>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                    
-                    <!-- 🌟 产品 1：高压离心风机（100%锁死嵌入完美的技术亮点文案与真实大图） -->
-                    <div class="bg-gray-800/80 rounded-xl border border-gray-700 overflow-hidden flex flex-col justify-between p-6 shadow-xl">
-                        <div>
-                            <img src="https://ibb.co" style="width: 100%; height: 160px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1.25rem;" alt="JC High-Speed Centrifugal Turbo Blowers">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: #ffffff; margin-bottom: 0.25rem;">High-Speed Turbo Blowers</h3>
-                            <p style="font-size: 0.75rem; font-weight: 600; color: #00b4d8; margin-bottom: 0.75rem; text-transform: uppercase;">AT-Series (4kW - 15kW)</p>
-                            
-                            <ul style="color: #94a3b8; font-size: 0.75rem; text-align: left; list-style-type: none; space-y: 2px;" class="space-y-2">
-                                <li>• <strong>PMSM Motor:</strong> Rare-earth permanent magnet three-phase synchronous motor cuts energy costs by up to 30%.</li>
-                                <li>• <strong>3D Impeller:</strong> Optimized airflow channels maximize full-pressure efficiency.</li>
-                                <li>• <strong>VFD Control:</strong> Stepless speed control precisely matches any pressure/flow needs.</li>
-                                <li>• <strong>Low Noise:</strong> Volute silencing layer keeps bare machine noise ≤85 dB.</li>
-                                <li>• <strong>Compact:</strong> Integrated space-saving footprint ideal for Automotive, Electronics, Medical, Textiles, Food & Beverage packaging.</li>
-                            </ul>
-                        </div>
-                        <a href="#specs" class="btn-card" style="margin-top: 1.25rem;">View Tech Specs</a>
-                    </div>
-
-                    <!-- 产品 2 -->
-                    <div class="bg-gray-800/80 rounded-xl border border-gray-700 overflow-hidden flex flex-col justify-between p-6 shadow-xl">
-                        <div>
+    <!-- 1. 导航栏 (NAV BAR) -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">JC <span>BLOWERS</span></div>
+            <nav class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#features">Technology</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact Us</a>
+            </nav>

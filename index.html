@@ -6,14 +6,10 @@
     <title>JC Blowers | High-Speed Turbo Blowers & Air Knife Systems Manufacturer</title>
     <meta name="description" content="Professional B2B manufacturer of high-speed turbo blowers, maglev blowers, and custom air knife systems for industrial aeration and drying lines.">
     <link href="https://googleapis.com" rel="stylesheet">
-    
-    <!-- 🌟【科技浅蓝本地闭环排版】：100%不需要外部加载，将高端微光银蓝、极光蓝盒模型与五大技术亮点完全锁死在本地 -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #1e293b; line-height: 1.6; }
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-        
-        /* 导航栏 */
         header { position: sticky; top: 0; z-index: 50; background-color: rgba(240, 244, 248, 0.95); border-bottom: 1px solid #d1dbe5; backdrop-filter: blur(12px); width: 100%; }
         .nav-container { max-w: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 1.5rem; font-weight: 700; tracking-spacing: -0.05em; color: #0f172a; }
@@ -22,51 +18,41 @@
         @media (max-w: 768px) { .nav-links { display: none; } }
         .nav-links a { font-size: 0.9rem; font-weight: 600; color: #475569; }
         .nav-links a:hover { color: #0284c7; }
-        
-        /* 核心按钮组件 */
-        .btn-whatsapp { background-color: #10b981; color: white; padding: 0.65rem 1.35rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2); border: none; cursor: pointer; }
-        .btn-whatsapp:hover { background-color: #059669; transform: translateY(-1px); }
-        .btn-blue { background-color: #0284c7; color: white; padding: 0.85rem 1.75rem; border-radius: 0.75rem; font-size: 0.9rem; font-weight: 600; display: inline-block; text-center: center; box-shadow: 0 10px 20px -3px rgba(2, 132, 199, 0.3); }
-        .btn-blue:hover { background-color: #0369a1; transform: translateY(-1px); }
+        .btn-whatsapp { background-color: #10b981; color: white; padding: 0.65rem 1.35rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; border: none; }
+        .btn-whatsapp:hover { background-color: #059669; }
+        .btn-blue { background-color: #0284c7; color: white; padding: 0.85rem 1.75rem; border-radius: 0.75rem; font-size: 0.9rem; font-weight: 600; display: inline-block; text-align: center; }
+        .btn-blue:hover { background-color: #0369a1; }
         .btn-border { border: 1px solid #94a3b8; color: #334155; padding: 0.85rem 1.75rem; border-radius: 0.75rem; font-size: 0.9rem; font-weight: 600; display: inline-block; text-center: center; background-color: #ffffff; }
         .btn-border:hover { border-color: #475569; background-color: #f8fafc; }
-
-        /* 巨幕 Hero Area */
         .hero-bg-wrapper { background: linear-gradient(180deg, #e0e9f0 0%, #f0f4f8 100%); border-bottom: 1px solid #d1dbe5; width: 100%; }
         .hero-section { max-w: 1200px; margin: 0 auto; padding: 6rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         @media (max-w: 1024px) { .hero-section { grid-template-columns: 1fr; text-align: center; } }
-        .hero-badge { background-color: #ffffff; color: #0284c7; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; border: 1px solid #cbd5e1; display: inline-block; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .hero-title { font-size: 3rem; font-weight: 700; line-height: 1.15; color: #0f172a; margin-bottom: 1.5rem; tracking-spacing: -0.02em; }
+        .hero-badge { background-color: #ffffff; color: #0284c7; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; border: 1px solid #cbd5e1; display: inline-block; margin-bottom: 1.5rem; }
+        .hero-title { font-size: 3rem; font-weight: 700; line-height: 1.15; color: #0f172a; margin-bottom: 1.5rem; }
         .hero-desc { color: #475569; font-size: 1.125rem; margin-bottom: 2.5rem; max-w: 520px; }
         @media (max-w: 1024px) { .hero-desc { margin: 0 auto 2.5rem auto; } }
         .hero-buttons { display: flex; gap: 1rem; }
         @media (max-w: 1024px) { .hero-buttons { justify-content: center; } }
         .hero-visual { display: flex; justify-content: center; }
         .hero-box { width: 340px; height: 340px; background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%); border-radius: 1.75rem; border: 1px solid #cbd5e1; box-shadow: 0 20px 40px -10px rgba(15,23,42,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
-
-        /* 工厂优势 Advantages */
         .section-bg { background-color: #ffffff; padding: 5rem 1.5rem; width: 100%; border-bottom: 1px solid #e2e8f0; }
         .section-title-box { text-align: center; max-w: 750px; margin: 0 auto 4.5rem auto; }
         .section-title { font-size: 2.25rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; }
         .section-subtitle { color: #64748b; font-size: 1rem; }
         .grid-3 { max-w: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         @media (max-w: 768px) { .grid-3 { grid-template-columns: 1fr; } }
-        .card-advantage { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2.5rem 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .card-advantage { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2.5rem 2rem; border-radius: 1.25rem; }
         .card-icon { font-size: 2rem; margin-bottom: 1.2rem; }
         .card-h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.85rem; color: #0f172a; }
         .card-p { color: #475569; font-size: 0.9rem; line-height: 1.6; }
-
-        /* 五大技术亮点专属排版 */
         .features-section-wrapper { background-color: #ffffff; width: 100%; border-bottom: 1px solid #e2e8f0; padding: 6rem 1.5rem; }
         .features-section { max-w: 1200px; margin: 0 auto; }
         .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3.5rem; }
         @media (max-w: 1024px) { .features-grid { grid-template-columns: 1fr; } }
-        .feature-item-box { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 1.25rem; box-shadow: 0 4px 6px rgba(0,0,0,0.01); display: flex; gap: 1.25rem; }
+        .feature-item-box { background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 1.25rem; display: flex; gap: 1.25rem; }
         .feature-num-icon { flex-shrink: 0; width: 44px; height: 44px; background-color: rgba(2, 132, 199, 0.1); color: #0284c7; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.125rem; }
         .feature-content h3 { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; }
         .feature-content p { color: #475569; font-size: 0.875rem; line-height: 1.6; text-align: justify; }
-
-        /* 产品线橱窗 Grid - 四列并排 */
         .products-bg { background-color: #f1f5f9; padding: 5rem 1.5rem; width: 100%; border-bottom: 1px solid #cbd5e1; }
         .products-section { max-w: 1200px; margin: 0 auto; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
@@ -76,34 +62,44 @@
         .img-container { height: 170px; background-color: #f8fafc; border-radius: 0.75rem; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; overflow: hidden; }
         .img-real { width: 100%; height: 100%; object-fit: cover; }
         .prod-title { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; }
-        .prod-series { font-size: 0.75rem; font-weight: 700; color: #0284c7; margin-bottom: 0.85rem; text-transform: uppercase; tracking-spacing: 0.05em; }
+        .prod-series { font-size: 0.75rem; font-weight: 700; color: #0284c7; margin-bottom: 0.85rem; text-transform: uppercase; }
         .prod-desc { color: #475569; font-size: 0.875rem; line-height: 1.5; margin-bottom: 1.5rem; }
-        .btn-card { display: block; width: 100%; text-align: center; background-color: #f1f5f9; color: #0f172a; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; border: 1px solid #cbd5e1; text-align: center; }
+        .btn-card { display: block; width: 100%; text-align: center; background-color: #f1f5f9; color: #0f172a; padding: 0.75rem; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600; border: 1px solid #cbd5e1; }
         .btn-card:hover { background-color: #0284c7; color: white; border-color: #0284c7; }
-
-        /* 联系我们 Section */
         .contact-bg { background-color: #ffffff; padding: 5rem 1.5rem; width: 100%; }
         .contact-section { max-w: 850px; margin: 0 auto; text-align: center; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; margin-bottom: 3rem; }
         @media (max-w: 640px) { .contact-grid { grid-template-columns: 1fr; } }
-        .contact-box { background-color: rgba(2, 132, 199, 0.03); border: 1px solid rgba(2, 132, 199, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; }
+        .contact-box { background-color: rgba(2, 132, 199, 0.03); border: 1px solid rgba(2, 132, 199, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .contact-box:hover { background-color: rgba(2, 132, 199, 0.06); border-color: #0284c7; }
-        .contact-box-whatsapp { background-color: rgba(16, 185, 129, 0.03); border: 1px solid rgba(16, 185, 129, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; }
+        .contact-box-whatsapp { background-color: rgba(16, 185, 129, 0.03); border: 1px solid rgba(16, 185, 129, 0.15); padding: 2rem; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .contact-box-whatsapp:hover { background-color: rgba(16, 185, 129, 0.06); border-color: #10b981; }
         .c-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
         .c-label { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
         .c-label-blue { color: #0284c7; }
         .c-label-green { color: #10b981; }
         .c-value { font-size: 0.875rem; color: #475569; font-weight: 500; }
-        
         .info-badge-grid { max-w: 520px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left; font-size: 0.8rem; color: #475569; border-top: 1px solid #cbd5e1; padding-top: 2rem; }
         footer { text-align: center; padding: 2.5rem; border-top: 1px solid #cbd5e1; background-color: #f8fafc; font-size: 0.8rem; color: #64748b; font-weight: 500; width: 100%; }
     </style>
 </head>
 <body>
-
-    <!-- 1. 导航栏 (NAV BAR) -->
     <header>
         <div class="nav-container">
             <div class="logo">JC <span>BLOWERS</span></div>
             <nav class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#features">Technology</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <div>
+                <a href="https://wa.me" target="_blank" class="btn-whatsapp">WhatsApp Me</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="hero-bg-wrapper">
+            <section class="hero-section">
+                <div>
+                    <div class="hero-badge">Direct Factory Sourcing | China</div>
